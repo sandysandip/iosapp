@@ -12,9 +12,13 @@
 		A66340C2215BBBA700AF3B5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66340C0215BBBA700AF3B5D /* Main.storyboard */; };
 		A66340C4215BBBB700AF3B5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66340C3215BBBB700AF3B5D /* Assets.xcassets */; };
 		A66340C7215BBBB700AF3B5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66340C5215BBBB700AF3B5D /* LaunchScreen.storyboard */; };
+		F57390506C6D106C4968C9A1 /* Pods_SamapleJenkins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9469EF71E8A48813F12A3C /* Pods_SamapleJenkins.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		015D364660C316D5A3BB6080 /* Pods-SamapleJenkins.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamapleJenkins.release.xcconfig"; path = "Pods/Target Support Files/Pods-SamapleJenkins/Pods-SamapleJenkins.release.xcconfig"; sourceTree = "<group>"; };
+		31A8841246D8DB6A013F4881 /* Pods-SamapleJenkins.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamapleJenkins.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SamapleJenkins/Pods-SamapleJenkins.debug.xcconfig"; sourceTree = "<group>"; };
+		7F9469EF71E8A48813F12A3C /* Pods_SamapleJenkins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SamapleJenkins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66340B9215BBBA600AF3B5D /* SamapleJenkins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SamapleJenkins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66340BC215BBBA600AF3B5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A66340BE215BBBA700AF3B5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F57390506C6D106C4968C9A1 /* Pods_SamapleJenkins.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AEA8D640B58219AAACABF0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F9469EF71E8A48813F12A3C /* Pods_SamapleJenkins.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A66340B0215BBBA600AF3B5D = {
 			isa = PBXGroup;
 			children = (
 				A66340BB215BBBA600AF3B5D /* SamapleJenkins */,
 				A66340BA215BBBA600AF3B5D /* Products */,
+				CE8283C7704EFC5114C35ABE /* Pods */,
+				1AEA8D640B58219AAACABF0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = SamapleJenkins;
 			sourceTree = "<group>";
 		};
+		CE8283C7704EFC5114C35ABE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				31A8841246D8DB6A013F4881 /* Pods-SamapleJenkins.debug.xcconfig */,
+				015D364660C316D5A3BB6080 /* Pods-SamapleJenkins.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A66340CB215BBBB700AF3B5D /* Build configuration list for PBXNativeTarget "SamapleJenkins" */;
 			buildPhases = (
+				2E088F46275238F0BD56EC65 /* [CP] Check Pods Manifest.lock */,
 				A66340B5215BBBA600AF3B5D /* Sources */,
 				A66340B6215BBBA600AF3B5D /* Frameworks */,
 				A66340B7215BBBA600AF3B5D /* Resources */,
+				E9D524FFBF32D648E2A8E34B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E088F46275238F0BD56EC65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SamapleJenkins-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9D524FFBF32D648E2A8E34B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SamapleJenkins/Pods-SamapleJenkins-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SamapleJenkins/Pods-SamapleJenkins-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A66340B5215BBBA600AF3B5D /* Sources */ = {
@@ -278,6 +343,7 @@
 		};
 		A66340CC215BBBB700AF3B5D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31A8841246D8DB6A013F4881 /* Pods-SamapleJenkins.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -299,6 +365,7 @@
 		};
 		A66340CD215BBBB700AF3B5D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 015D364660C316D5A3BB6080 /* Pods-SamapleJenkins.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
